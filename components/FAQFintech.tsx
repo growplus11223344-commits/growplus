@@ -9,28 +9,28 @@ export const FAQFintech: React.FC = () => {
 
   const faqs = [
     {
-      q: "What is GROWPLUS?",
-      a: "GROWPLUS is a premier digital financial growth and community referral platform. We offer transparent 365-day fixed-yield capital allocation tiers (10% to 20% monthly yields), daily midnight bonuses up to ₹300/day, and a multi-level referral network that rewards community builders with instant cash commissions.",
+      q: "What is GROWPLUS and how does it compare to Amway, Vestige, and Mi Lifestyle?",
+      a: "GROWPLUS is a 100% legal, product-based direct selling company operating under the Consumer Protection (Direct Selling) Rules 2021. Just like Amway (Nutrilite), Vestige, and Mi Lifestyle (Elements Wellness), we market premium certified AYUSH & FSSAI healthcare, nutraceutical, skincare, and organic agriculture products through independent distributors.",
     },
     {
-      q: "How are returns calculated on GROWPLUS?",
-      a: "Returns are calculated based on your activated plan tier. For example, in the Daily Earning Super Plan, you receive a 20% monthly return calculated on your principal allocation, plus an extra ₹300 daily bonus added automatically to your wallet at 12:00 AM midnight.",
+      q: "How does the '10% on First Bill (One-Time Only)' Referral Bonus work?",
+      a: "Whenever you sponsor a new distributor who registers with your sponsor ID, you receive an instant 10% direct cash bonus on their very first purchase/bill. For example, if your friend places their first starter order of ₹10,000, ₹1,000 is credited directly to your bank payout wallet. Subsequent re-orders do not pay direct 10%; instead, their full Business Volume (BV) flows into your Binary Team matching tree for lifelong matching bonuses.",
     },
     {
-      q: "How does the Daily Midnight Bonus work?",
-      a: "Daily Earning Plan (₹99/day) and Daily Earning Super (₹300/day) credit cash bonuses every night at midnight. Once your daily bonus wallet reaches the minimum withdrawal threshold (₹1,000 for Daily Earning, ₹3,000 for Super), you can request immediate bank payouts.",
+      q: "How does the Binary Network Tree (Left & Right Teams) matching plan work?",
+      a: "Every distributor builds two teams: Left Wing and Right Wing ('jo mene us din sab ko smjhaya tha'). When your Left and Right teams purchase products, Business Volume (BV) accumulates. GrowPlus matches equal volume on a 1:1 ratio and pays out 12% matching commission every week. For instance, matching 50,000 Left BV with 50,000 Right BV pays ₹6,000 weekly.",
     },
     {
-      q: "How does the Referral Commission Program work?",
-      a: "When anyone registers with your exclusive referral code or link, you earn a flat 5% instant cash commission on their deposit amount. Additionally, you earn a 3% team override on Level 2 allocations, plus special leadership milestone bonuses.",
+      q: "What is the difference between MRP, DP, and BV?",
+      a: "MRP (Maximum Retail Price) is the standard retail price for regular customers. DP (Distributor Price) is the special discounted wholesale rate (15% to 25% lower) available exclusively to registered distributors. BV (Business Volume) is the points attributed to each product used to calculate your binary team matching checks and rank qualifications.",
     },
     {
-      q: "How do I deposit funds into my GROWPLUS wallet?",
-      a: "Depositing is instant. Go to your Member Portal, navigate to Deposit, enter your desired amount (minimum ₹1,000), choose UPI, QR code, or IMPS/Bank Transfer, and confirm the transaction. Your wallet is updated in real time with zero deposit fees.",
+      q: "Is there any registration fee to join GROWPLUS as a distributor?",
+      a: "No! Under Government Direct Selling Rules 2021, registration is 100% free with zero joining fee or mandatory kit purchase. You simply create your free account, submit digital KYC (Aadhaar & PAN), and choose whichever products you wish to purchase for personal use or retailing.",
     },
     {
-      q: "How and when can I withdraw my earnings?",
-      a: "You can request earnings and referral commission withdrawals at any time once your balance reaches the minimum threshold of ₹500. Withdrawals are processed directly to your registered Indian bank account via IMPS/NEFT within 2 to 24 hours.",
+      q: "When and how are weekly payouts credited to distributors?",
+      a: "Weekly business cut-off closes every Sunday at 11:59 PM IST. All accumulated 10% direct referral bonuses and 12% binary matching commissions are disbursed directly into your verified bank account via automated IMPS/NEFT every Wednesday, with compliant TDS certificates.",
     },
   ];
 
@@ -45,7 +45,7 @@ export const FAQFintech: React.FC = () => {
             Everything You Need to Know
           </h2>
           <p className="text-sm sm:text-base text-[#AAA2C1]">
-            Clear, straightforward answers about our investment plans, daily midnight bonus accruals, and referral commissions.
+            Clear, transparent answers about products, the 10% first bill bonus, and the binary compensation tree.
           </p>
         </div>
 
@@ -62,8 +62,9 @@ export const FAQFintech: React.FC = () => {
                 }`}
               >
                 <button
+                  type="button"
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 transition-colors"
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 transition-colors cursor-pointer"
                 >
                   <span className="font-bold text-sm sm:text-base text-white">
                     {item.q}

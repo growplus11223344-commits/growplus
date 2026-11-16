@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   UserPlus,
-  CreditCard,
-  TrendingUp,
+  ShoppingBag,
+  GitFork,
   Coins,
   ShieldCheck,
   Sparkles,
@@ -15,7 +15,9 @@ import {
   Zap,
   Users,
   Smartphone,
+  Award,
 } from "lucide-react";
+import { HowItWorksFintech } from "@/components/HowItWorksFintech";
 
 export default function HowItWorksPage() {
   const [activeStage, setActiveStage] = useState(0);
@@ -25,234 +27,205 @@ export default function HowItWorksPage() {
       id: "registration",
       number: "01",
       icon: UserPlus,
-      title: "Account Registration",
-      tagline: "Instant Onboarding & Digital Identity Setup",
+      title: "Free Distributor Registration",
+      tagline: "Instant Digital KYC & Sponsor Linking",
       description:
-        "Join in under 60 seconds with your mobile number and email. Every member is assigned an encrypted digital GP identity that connects directly to the GrowPlus platform and companion mobile app.",
+        "Join in under 60 seconds with your mobile number, email, and Sponsor ID. In accordance with the Consumer Protection (Direct Selling) Rules 2021, registration is 100% free with zero joining fees.",
       details: [
         "Zero registration fee or hidden setup charges.",
-        "Secure OTP and 256-bit encrypted password creation.",
-        "Enter a friend's referral code to link your account to their community tree.",
-        "Instant generation of your personal Member Portal and secure wallet ledger."
+        "Quick paperless Aadhaar & PAN KYC verification.",
+        "Enter your sponsor's ID to connect to their Left or Right binary team.",
+        "Instant generation of your personal Distributor ID and portal dashboard."
       ],
     },
     {
-      id: "deposit",
+      id: "first-bill",
       number: "02",
-      icon: CreditCard,
-      title: "Deposit & Wallet Funding",
-      tagline: "Instant UPI, QR Code & Bank Top-Up",
+      icon: ShoppingBag,
+      title: "1st Product Bill & ID Activation",
+      tagline: "15%-25% Wholesale DP & 10% Sponsor Credit",
       description:
-        "Fund your GROWPLUS wallet seamlessly via UPI, QR scanner, IMPS, or Netbanking. All deposits are verified and reflected instantly with zero processing deductions.",
+        "Order certified AYUSH & FSSAI healthcare, wellness, or personal care products at wholesale Distributor Price (DP). Your direct sponsor receives an immediate 10% cash bonus on your first invoice.",
       details: [
-        "Supports PhonePe, Google Pay, Paytm, UPI IDs, and direct IMPS transfers.",
-        "Minimum initial wallet deposit starting from ₹1,000.",
-        "Automated cryptographic payment verification.",
-        "Real-time wallet balance update visible on both web portal and mobile app."
+        "Explore 100% genuine herbal nutrition, skincare, and organic agriculture lines.",
+        "Enjoy 15% to 25% direct savings compared to Maximum Retail Price (MRP).",
+        "Your sponsor earns flat 10% cash one-time bonus on your 1st bill.",
+        "Your account is activated with full Business Volume (BV) recorded for binary matching."
       ],
     },
     {
-      id: "plan-activation",
+      id: "binary-teams",
       number: "03",
-      icon: TrendingUp,
-      title: "Select & Activate Growth Plan",
-      tagline: "Fixed 365-Day Monthly Returns",
+      icon: GitFork,
+      title: "Build Your Left & Right Teams",
+      tagline: "The Power of Dual-Wing Binary Synergy",
       description:
-        "Choose from 4 tailored investment plans (10% Starter, 12% VIP, 18% Daily Earning, or 20% Daily Super) to match your capital growth goals.",
+        "Share your unique referral code or app invite. Place new distributors into your Left Team or Right Team to build network momentum and benefit from upline spillover.",
       details: [
-        "Starter Plan: ₹1,000 to ₹20,000 with 10% monthly yield.",
-        "VIP Member Plan: ₹20,000 to ₹1,00,000 with 12% monthly yield.",
-        "Daily Earning Plan: ₹5,000 to ₹1,50,000 with 18% monthly yield + ₹99 daily cash.",
-        "Daily Super Plan: Min ₹10,000 (No limit) with 20% monthly yield + ₹300 daily cash."
+        "Balanced dual-team binary tree ensures team teamwork and shared volume.",
+        "Upline spillover automatically places motivated distributors in your team.",
+        "Real-time visual genealogy tree available on both web portal and mobile app.",
+        "Unlimited depth: Earn from 10th, 50th, or 100th generation team product sales!"
       ],
     },
     {
-      id: "daily-bonus",
+      id: "bv-matching",
       number: "04",
       icon: Coins,
-      title: "Daily Midnight Bonus Accrual",
-      tagline: "12:00 AM Automated Cash Credited Nightly",
+      title: "1:1 BV Matching Income",
+      tagline: "12% Weekly Pair Match Bonus",
       description:
-        "Sit back and watch your daily earnings accumulate. Daily Earning (₹99/day) and Super (₹300/day) bonuses drop automatically into your bonus ledger at midnight without needing manual check-ins.",
+        "Every product purchased by your Left and Right teams generates Business Volume (BV). GrowPlus matches equal volume on a 1:1 ratio and pays out 12% matching commission every single week.",
       details: [
-        "Automatic system-triggered accrual at 12:00 AM IST every single night.",
-        "Itemized ledger breakdown displaying exact time stamps and bonus amounts.",
-        "Daily bonuses withdrawable to bank after reaching plan threshold (₹1,000 or ₹3,000).",
-        "Push notifications sent immediately to your GrowPlus Rewards App."
+        "1:1 matching ratio between Left Team BV and Right Team BV.",
+        "Flat 12% matching bonus calculated on matched volume.",
+        "Unmatched BV carries forward indefinitely with ZERO flush-out.",
+        "Generous weekly capping up to ₹2,10,000 per distributor ID."
       ],
     },
     {
-      id: "referral-mlm",
+      id: "bank-payouts",
       number: "05",
-      icon: Users,
-      title: "Multi-Tier MLM Referral Network",
-      tagline: "5% Direct Cash + 3% Team Override",
-      description:
-        "Share your personal referral code on WhatsApp, Telegram, or social media. Earn 5% instant cash on direct friends' deposits, plus 3% on their extended invites and ₹5,000 milestone rewards.",
-      details: [
-        "Level 1: Flat 5% direct cash credited immediately upon friend deposit.",
-        "Level 2: 3% team volume override on friends invited by your referrals.",
-        "VIP Milestone: Extra ₹5,000 cash bonus when you reach 10 active investors.",
-        "Referral commissions are 100% withdrawable to your bank account."
-      ],
-    },
-    {
-      id: "withdrawal",
-      number: "06",
       icon: ShieldCheck,
-      title: "Instant Bank Withdrawal & In-App Shopping",
-      tagline: "Direct IMPS Bank Payouts or In-App Shopping",
+      title: "Automated Bank Payouts & Ranks",
+      tagline: "Weekly Bank Transfers & Leadership Funds",
       description:
-        "Request payouts directly to your verified Indian bank account starting at just ₹500, or seamlessly use your credits inside the upcoming GrowPlus Rewards App for electronics and lifestyle purchases.",
+        "Your earned direct referral bonuses and binary matching commissions are disbursed directly into your bank account every Wednesday via IMPS/NEFT with compliant TDS deductions.",
       details: [
-        "Withdrawal requests processed directly to your savings/current account via IMPS/NEFT.",
-        "Minimum withdrawal threshold from ₹500 (standard yield) or ₹1,000 (daily bonus).",
-        "Option to redeem 1:1 rupee parity credits on the in-app shopping gateway.",
-        "Dedicated treasury concierge support for rapid query resolution."
+        "Automated weekly closing every Sunday midnight with Wednesday bank transfer.",
+        "Ascend through Silver, Gold, Platinum, Diamond, and Crown ranks.",
+        "Unlock permanent monthly Car Fund (5%), Travel Fund (3%), and House Fund (3%).",
+        "Official TDS certificates and financial statements generated automatically."
       ],
     },
   ];
 
   const currentStage = journeyStages[activeStage];
-  const Icon = currentStage.icon;
+  const CurrentIcon = currentStage.icon;
 
   return (
     <div className="relative min-h-screen bg-[#070B1E] text-white py-12 sm:py-20 overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-[#287CFF]/15 to-[#8B35FF]/15 blur-[130px] pointer-events-none -z-10" />
+      {/* Background ambient lighting */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-[#287CFF]/15 via-[#8B35FF]/10 to-transparent blur-[130px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        
         {/* Header Breadcrumb & Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121B3B] border border-[#287CFF]/40 text-xs font-semibold text-white/90">
             <Sparkles className="w-3.5 h-3.5 text-[#35E6A2]" />
-            <span>End-to-End Investor Lifecycle</span>
+            <span>The Direct Selling Roadmap</span>
           </div>
-          <h1 className="text-4xl sm:text-5.5xl font-black tracking-tight">
-            How{" "}
+          <h1 className="text-4xl sm:text-5.5xl font-black tracking-tight leading-tight">
+            How GrowPlus Works: <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#38BDF8] to-[#35E6A2]">
-              GROWPLUS
-            </span>{" "}
-            Works
+              From Joining to Weekly Bank Payouts
+            </span>
           </h1>
           <p className="text-sm sm:text-base text-[#AAA2C1] leading-relaxed">
-            Follow the complete step-by-step journey from onboarding to daily midnight earnings, community referral overrides, and instant bank withdrawals.
+            Follow our proven 5-stage blueprint designed after world-class direct selling giants (Amway, Vestige, Mi Lifestyle) to build a sustainable, recurring income.
           </p>
         </div>
 
-        {/* Horizontal Timeline Bar */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none justify-start lg:justify-center">
+        {/* Interactive Tabbed Walkthrough */}
+        <div className="p-6 sm:p-10 rounded-[32px] bg-[#0E1533]/90 border border-[#287CFF]/30 shadow-2xl backdrop-blur-xl space-y-8">
+          
+          {/* Tabs Navigation */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 border-b border-white/10 pb-6">
             {journeyStages.map((stage, idx) => {
-              const StageIcon = stage.icon;
-              const isActive = activeStage === idx;
+              const active = activeStage === idx;
+              const Icon = stage.icon;
               return (
                 <button
                   key={stage.id}
+                  type="button"
                   onClick={() => setActiveStage(idx)}
-                  className={`flex items-center gap-2.5 px-4 py-3 rounded-2xl text-xs font-bold shrink-0 transition-all duration-200 border ${
-                    isActive
-                      ? "bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black border-transparent shadow-[0_0_20px_rgba(56,189,248,0.4)] scale-105 font-extrabold"
-                      : "bg-[#0E1533] text-[#AAA2C1] border-white/10 hover:border-white/30 hover:text-white"
+                  className={`p-3.5 rounded-2xl text-left transition-all cursor-pointer flex flex-col justify-between ${
+                    active
+                      ? "bg-gradient-to-b from-[#287CFF]/30 to-[#121B3B] border-2 border-[#38BDF8] shadow-lg scale-102"
+                      : "bg-[#101738] border border-white/10 hover:border-white/20"
                   }`}
                 >
-                  <span className="font-mono text-[10px] opacity-75">{stage.number}</span>
-                  <StageIcon className="w-4 h-4" />
-                  <span>{stage.title}</span>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-xs font-bold text-[#35E6A2]">Stage {stage.number}</span>
+                    <Icon className={`w-4 h-4 ${active ? "text-[#38BDF8]" : "text-[#AAA2C1]"}`} />
+                  </div>
+                  <span className={`text-xs font-bold line-clamp-1 ${active ? "text-white" : "text-[#AAA2C1]"}`}>
+                    {stage.title}
+                  </span>
                 </button>
               );
             })}
           </div>
-        </div>
 
-        {/* Stage Spotlight Card */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#0E1533] border border-[#287CFF]/40 shadow-2xl mb-20 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left Content (7 cols) */}
-            <div className="lg:col-span-7 space-y-6">
+          {/* Active Tab Detailed Showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
+            <div className="lg:col-span-7 space-y-4 text-left">
               <div className="flex items-center gap-3">
-                <span className="text-2xl sm:text-3xl font-black font-mono text-[#38BDF8]">
-                  {currentStage.number}
-                </span>
-                <span className="h-6 w-px bg-white/20" />
-                <span className="text-xs uppercase font-extrabold tracking-wider text-[#35E6A2] bg-[#35E6A2]/10 px-2.5 py-1 rounded-full border border-[#35E6A2]/30">
-                  {currentStage.tagline}
-                </span>
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#287CFF] to-[#35E6A2] flex items-center justify-center text-black font-black">
+                  <CurrentIcon className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-[#35E6A2] tracking-wider block">
+                    {currentStage.tagline}
+                  </span>
+                  <h3 className="text-2xl font-black text-white">{currentStage.title}</h3>
+                </div>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-black text-white">
-                {currentStage.title}
-              </h2>
-
-              <p className="text-sm sm:text-base text-[#AAA2C1] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#AAA2C1] leading-relaxed">
                 {currentStage.description}
               </p>
 
-              <div className="space-y-3 pt-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-                  Key Mechanics &amp; Advantages:
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {currentStage.details.map((detail, dIdx) => (
-                    <div
-                      key={dIdx}
-                      className="p-3.5 rounded-2xl bg-black/40 border border-white/5 flex items-start gap-2.5"
-                    >
+              <div className="space-y-2 pt-2">
+                <span className="text-xs font-bold text-white uppercase tracking-wider block">
+                  Stage Highlights &amp; Guarantees:
+                </span>
+                <ul className="space-y-2 text-xs text-[#AAA2C1]">
+                  {currentStage.details.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-[#35E6A2] shrink-0 mt-0.5" />
-                      <span className="text-xs text-white/90 leading-relaxed">{detail}</span>
-                    </div>
+                      <span>{item}</span>
+                    </li>
                   ))}
-                </div>
-              </div>
-
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/#plans"
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black font-extrabold text-xs tracking-wide shadow-md hover:scale-105 transition-all flex items-center gap-2"
-                >
-                  <span>Explore Plans</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-                <Link
-                  href="/download-apps"
-                  className="px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-bold transition-all flex items-center gap-2"
-                >
-                  <Smartphone className="w-4 h-4 text-[#38BDF8]" />
-                  <span>Get Mobile App</span>
-                </Link>
+                </ul>
               </div>
             </div>
 
-            {/* Right Graphic Panel (5 cols) */}
-            <div className="lg:col-span-5 p-8 rounded-3xl bg-[#131D42] border border-[#287CFF]/30 space-y-6 text-center">
-              <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-[#287CFF] to-[#35E6A2] mx-auto flex items-center justify-center text-black font-black shadow-lg">
-                <Icon className="w-8 h-8 text-black" />
-              </div>
+            <div className="lg:col-span-5 p-7 rounded-3xl bg-gradient-to-br from-[#141E45] to-[#0A0F26] border border-[#287CFF]/40 shadow-xl space-y-4">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#38BDF8] bg-[#38BDF8]/10 px-2.5 py-0.5 rounded-full border border-[#38BDF8]/20 inline-block">
+                Distributor Benefit
+              </span>
 
-              <div>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-[#AAA2C1]">
-                  Stage {currentStage.number} Active Focus
-                </span>
-                <h4 className="text-xl font-bold text-white mt-1">{currentStage.title}</h4>
-              </div>
+              <h4 className="text-lg font-black text-white">
+                {activeStage === 0 && "100% Free Lifetime Account"}
+                {activeStage === 1 && "10% Direct First Bill Sponsor Bonus"}
+                {activeStage === 2 && "Dual Wing Spillover Momentum"}
+                {activeStage === 3 && "12% Weekly Binary Match (No Flush)"}
+                {activeStage === 4 && "Automated Bank Transfers Every Week"}
+              </h4>
 
-              <div className="p-4 rounded-2xl bg-black/40 border border-white/5 text-xs text-left space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-[#AAA2C1]">Execution:</span>
-                  <span className="font-bold text-[#35E6A2]">Fully Automated</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#AAA2C1]">Security:</span>
-                  <span className="font-bold text-[#38BDF8]">256-bit AES Encryption</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#AAA2C1]">Payout Target:</span>
-                  <span className="font-bold text-white">Direct Bank / UPI</span>
-                </div>
+              <p className="text-xs text-[#AAA2C1] leading-relaxed">
+                GROWPLUS is designed to make network building rewarding, ethical, and fully transparent. Join thousands of distributors across India.
+              </p>
+
+              <div className="pt-2">
+                <Link
+                  href="/register"
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg hover:opacity-95"
+                >
+                  <span>Start Stage 01 Now</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>
+
         </div>
+
+        {/* Embedded HowItWorks 5 Cards */}
+        <HowItWorksFintech />
+
       </div>
     </div>
   );

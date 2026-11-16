@@ -4,65 +4,74 @@ import React from "react";
 import Link from "next/link";
 import {
   UserPlus,
-  CreditCard,
-  TrendingUp,
+  ShoppingBag,
+  GitFork,
   Coins,
-  ArrowRight,
   ShieldCheck,
   CheckCircle2,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 
 export const HowItWorksFintech: React.FC = () => {
   const steps = [
     {
       step: "01",
-      title: "Register Your Account",
-      subtitle: "Instant Digital Onboarding",
-      desc: "Sign up in 60 seconds with your phone number and email. Set a secure password and activate your encrypted GROWPLUS wallet.",
+      title: "Free Digital Registration",
+      subtitle: "Instant Distributor ID",
+      desc: "Join with zero registration fee using a Sponsor ID. Complete paperless Aadhaar/PAN KYC in under 2 minutes and unlock your Distributor Portal.",
       icon: UserPlus,
+      highlight: "Zero Joining Fee",
     },
     {
       step: "02",
-      title: "Deposit Funds",
-      subtitle: "Top-Up Wallet via UPI / Bank",
-      desc: "Add funds seamlessly via UPI, IMPS, or Netbanking. Zero deposit fees and instant transaction confirmation.",
-      icon: CreditCard,
+      title: "Activate with 1st Product Bill",
+      subtitle: "Wholesale DP Pricing",
+      desc: "Select certified Ayurvedic, nutrition, or home care products at 15-25% wholesale discount. Your direct sponsor receives an instant 10% first-bill bonus.",
+      icon: ShoppingBag,
+      highlight: "10% First Bill Bonus",
     },
     {
       step: "03",
-      title: "Select & Activate Plan",
-      subtitle: "Choose from 4 Curated Tiers",
-      desc: "Pick your preferred growth plan—from Starter 10% to Super 20% with ₹300 daily bonuses credited every midnight.",
-      icon: TrendingUp,
+      title: "Build Left & Right Teams",
+      subtitle: "Dual Wing Binary Power",
+      desc: "Share your referral code. Place new distributors into your Left Team or Right Team to build network momentum and capitalize on spillover.",
+      icon: GitFork,
+      highlight: "Binary Team Power",
     },
     {
       step: "04",
-      title: "Earn Returns & Daily Bonuses",
-      subtitle: "Real-Time Yield Ledger",
-      desc: "Track your capital growth live on the dashboard. Daily bonuses accrue automatically at 12:00 AM midnight.",
+      title: "1:1 BV Matching Income",
+      subtitle: "12% Pair Match Bonus",
+      desc: "As your dual teams purchase and retail products, Business Volume (BV) accumulates. Every 1:1 matched BV pays 12% weekly matching cash.",
       icon: Coins,
+      highlight: "12% Weekly Pair Bonus",
     },
     {
       step: "05",
-      title: "Withdraw Directly to Bank",
-      subtitle: "Automated Payout Gateway",
-      desc: "Transfer your earned yield and commissions directly to your bank account with fast-track processing from ₹500+.",
+      title: "Weekly Bank Payouts & Ranks",
+      subtitle: "Direct Bank Transfer",
+      desc: "Receive automated payouts directly to your bank account every Wednesday. Unlock Silver, Gold, Diamond ranks with Car, Travel, and House funds.",
       icon: ShieldCheck,
+      highlight: "Automated Payouts",
     },
   ];
 
   return (
-    <section id="how-it-works" className="relative py-24 bg-[#0A0F26] border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-[#287CFF] bg-[#287CFF]/10 px-3 py-1 rounded-full border border-[#287CFF]/30">
-            Frictionless Journey
+    <section id="how-it-works" className="relative py-24 bg-[#0A0F26] border-t border-white/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-[#287CFF] bg-[#287CFF]/10 px-3 py-1 rounded-full border border-[#287CFF]/30 inline-flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#38BDF8]" />
+            The Distributor Roadmap
           </span>
           <h2 className="text-3xl sm:text-5xl font-black text-white">
-            How GROWPLUS Works
+            How GrowPlus Works
           </h2>
           <p className="text-sm sm:text-base text-[#AAA2C1] leading-relaxed">
-            From funding your account to receiving daily midnight bonuses and withdrawing earnings, our streamlined flow makes capital growth effortless.
+            From free digital joining to your first product order, binary team building, and automated weekly bank payouts — your path to direct-selling success in 5 simple steps.
           </p>
         </div>
 
@@ -73,14 +82,14 @@ export const HowItWorksFintech: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-3xl bg-[#0E1533] border border-white/10 hover:border-[#287CFF]/50 transition-all space-y-4 relative flex flex-col justify-between group"
+                className="p-6 rounded-3xl bg-[#0E1533] border border-white/10 hover:border-[#287CFF]/50 transition-all space-y-4 relative flex flex-col justify-between group shadow-lg hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#287CFF] to-[#8B35FF] flex items-center justify-center text-white shadow-md">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#287CFF] to-[#35E6A2] flex items-center justify-center text-black font-black shadow-md">
+                      <Icon className="w-6 h-6 text-black" />
                     </div>
-                    <span className="font-mono text-2xl font-black text-white/10 group-hover:text-[#287CFF]/20 transition-colors">
+                    <span className="font-mono text-3xl font-black text-white/10 group-hover:text-[#38BDF8]/20 transition-colors">
                       {st.step}
                     </span>
                   </div>
@@ -88,18 +97,34 @@ export const HowItWorksFintech: React.FC = () => {
                   <span className="text-[10px] font-bold text-[#35E6A2] uppercase tracking-wider block mb-1">
                     {st.subtitle}
                   </span>
-                  <h3 className="font-extrabold text-base text-white mb-2">{st.title}</h3>
+                  <h3 className="font-extrabold text-base text-white mb-2 leading-snug">{st.title}</h3>
                   <p className="text-xs text-[#AAA2C1] leading-relaxed">{st.desc}</p>
                 </div>
 
-                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-[#AAA2C1]">
-                  <span>Step {st.step}</span>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#35E6A2]" />
+                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px]">
+                  <span className="text-[#38BDF8] font-bold">{st.highlight}</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#35E6A2]" />
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* Join CTA Banner */}
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-[#121A3B] via-[#1B2754] to-[#0E1533] border border-[#287CFF]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-1">
+            <h4 className="text-xl font-black text-white">Ready to start your direct-selling journey?</h4>
+            <p className="text-xs text-[#AAA2C1]">Join today with zero registration fees and activate your binary tree.</p>
+          </div>
+          <Link
+            href="/register"
+            className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-transform shrink-0"
+          >
+            <span>Register as Distributor</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );
