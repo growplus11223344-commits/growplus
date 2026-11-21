@@ -37,6 +37,39 @@ function AvailabilityLink({ href, label, readyLabel }: { href: string | null; la
   );
 }
 
+function AndroidAppAccess({ webUrl, apkUrl, appName }: { webUrl: string | null; apkUrl: string | null; appName: string }) {
+  return (
+    <div className="space-y-3">
+      {webUrl ? (
+        <a
+          href={webUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#8B35FF] to-[#287CFF] px-5 py-3 text-sm font-bold text-white hover:opacity-90"
+        >
+          Open {appName} on Android <ArrowUpRight className="h-4 w-4" />
+        </a>
+      ) : (
+        <span className="inline-block rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm text-[#AAA2C1]">
+          {appName} Web App — not published
+        </span>
+      )}
+      {apkUrl ? (
+        <p className="text-sm">
+          <a href={apkUrl} className="inline-flex items-center gap-2 text-[#C4A0FF] underline">
+            <Download className="h-4 w-4" /> Download signed Android APK
+          </a>
+        </p>
+      ) : (
+        <p className="text-xs leading-6 text-amber-200/90">
+          Native APK is not published yet. Use the Web App above in Chrome; you can choose
+          Chrome menu → Add to Home screen for app-like access. The Web App does not require an APK download.
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function DownloadAppsPage() {
   const rewardsWeb = validHttpsUrl(rewardsWebUrl);
   const shoppingWeb = validHttpsUrl(shoppingWebUrl);
@@ -64,21 +97,21 @@ export default function DownloadAppsPage() {
           <div className="text-center">
             <h2 className="text-2xl font-black sm:text-3xl">Choose your device and app</h2>
             <p className="mt-2 text-sm text-[#AAA2C1]">
-              Two Android APK downloads and two iPhone Home Screen web apps. Links activate only when the release URL is configured.
+              Two Android Web App options, two iPhone Home Screen web apps, and signed APK downloads when verified releases are published.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-3 rounded-2xl border border-[#8B35FF]/35 bg-[#150F2C] p-5">
               <Smartphone className="h-7 w-7 text-[#B44CFF]" />
               <h3 className="text-lg font-bold">1. Rewards — Android APK</h3>
-              <p className="text-sm text-[#AAA2C1]">Install the signed Rewards app directly from the website once its APK is published.</p>
-              <AvailabilityLink href={rewardsApk} label="Rewards APK download" readyLabel="Download Rewards APK" />
+              <p className="text-sm text-[#AAA2C1]">Open Rewards immediately as a Web App on Android. A separately signed APK download appears only when it has been released.</p>
+              <AndroidAppAccess webUrl={rewardsWeb} apkUrl={rewardsApk} appName="Rewards" />
             </div>
             <div className="space-y-3 rounded-2xl border border-[#287CFF]/35 bg-[#150F2C] p-5">
               <Smartphone className="h-7 w-7 text-[#92B6FF]" />
               <h3 className="text-lg font-bold">2. Shopping — Android APK</h3>
-              <p className="text-sm text-[#AAA2C1]">Install the signed Shopping app directly from the website once its APK is published.</p>
-              <AvailabilityLink href={shoppingApk} label="Shopping APK download" readyLabel="Download Shopping APK" />
+              <p className="text-sm text-[#AAA2C1]">Open Shopping immediately as a Web App on Android. A separately signed APK download appears only when it has been released.</p>
+              <AndroidAppAccess webUrl={shoppingWeb} apkUrl={shoppingApk} appName="Shopping" />
             </div>
             <div className="space-y-3 rounded-2xl border border-[#8B35FF]/35 bg-[#150F2C] p-5">
               <Apple className="h-7 w-7 text-[#B44CFF]" />
@@ -109,7 +142,7 @@ export default function DownloadAppsPage() {
             <SmartphoneMockup type="rewards" />
             <div className="mt-7 flex flex-wrap gap-3">
               <AvailabilityLink href={rewardsWeb} label="Rewards Web / iPhone" readyLabel="Open Rewards Web App" />
-              <AvailabilityLink href={rewardsApk} label="Rewards Android APK" readyLabel="Get Rewards APK" />
+              {rewardsApk ? <AvailabilityLink href={rewardsApk} label="Rewards Android APK" readyLabel="Download Rewards APK" /> : null}
             </div>
           </section>
 
@@ -126,7 +159,7 @@ export default function DownloadAppsPage() {
             <SmartphoneMockup type="shopping" />
             <div className="mt-7 flex flex-wrap gap-3">
               <AvailabilityLink href={shoppingWeb} label="Shopping Web / iPhone" readyLabel="Open Shopping Web App" />
-              <AvailabilityLink href={shoppingApk} label="Shopping Android APK" readyLabel="Get Shopping APK" />
+              {shoppingApk ? <AvailabilityLink href={shoppingApk} label="Shopping Android APK" readyLabel="Download Shopping APK" /> : null}
             </div>
           </section>
         </div>
