@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Apple, ArrowUpRight, Download, Eye, Globe, MonitorSmartphone, ShieldCheck, Smartphone } from "lucide-react";
 import { SmartphoneMockup } from "@/components/MobileMockups";
 
-const rewardsWebUrl = process.env.NEXT_PUBLIC_REWARDS_WEB_URL?.trim();
-const shoppingWebUrl = process.env.NEXT_PUBLIC_SHOPPING_WEB_URL?.trim();
+const rewardsWebUrl = process.env.NEXT_PUBLIC_REWARDS_WEB_URL?.trim() || "https://growplus-rewards-pwa.onrender.com";
+const shoppingWebUrl = process.env.NEXT_PUBLIC_SHOPPING_WEB_URL?.trim() || "https://growplus-shopping-pwa.onrender.com";
 const rewardsApkUrl = process.env.NEXT_PUBLIC_REWARDS_APK_URL?.trim();
 const shoppingApkUrl = process.env.NEXT_PUBLIC_SHOPPING_APK_URL?.trim();
 
