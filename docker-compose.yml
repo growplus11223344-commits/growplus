@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: growplus-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: growplus
+      MONGO_INITDB_ROOT_PASSWORD: local_dev_password
+      MONGO_INITDB_DATABASE: growplus_analytics
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+  
+  mongo-express:
+    image: mongo-express:1.0.2
+    container_name: growplus-mongo-ui
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: growplus
+      ME_CONFIG_MONGODB_ADMINPASSWORD: local_dev_password
+      ME_CONFIG_MONGODB_URL: mongodb://growplus:local_dev_password@mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
