@@ -60,6 +60,41 @@ export default function DownloadAppsPage() {
           </p>
         </header>
 
+        <section aria-label="Install GrowPlus apps" className="space-y-5">
+          <div className="text-center">
+            <h2 className="text-2xl font-black sm:text-3xl">Choose your device and app</h2>
+            <p className="mt-2 text-sm text-[#AAA2C1]">
+              Two Android APK downloads and two iPhone Home Screen web apps. Links activate only when the release URL is configured.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-3 rounded-2xl border border-[#8B35FF]/35 bg-[#150F2C] p-5">
+              <Smartphone className="h-7 w-7 text-[#B44CFF]" />
+              <h3 className="text-lg font-bold">1. Rewards — Android APK</h3>
+              <p className="text-sm text-[#AAA2C1]">Install the signed Rewards app directly from the website once its APK is published.</p>
+              <AvailabilityLink href={rewardsApk} label="Rewards APK download" readyLabel="Download Rewards APK" />
+            </div>
+            <div className="space-y-3 rounded-2xl border border-[#287CFF]/35 bg-[#150F2C] p-5">
+              <Smartphone className="h-7 w-7 text-[#92B6FF]" />
+              <h3 className="text-lg font-bold">2. Shopping — Android APK</h3>
+              <p className="text-sm text-[#AAA2C1]">Install the signed Shopping app directly from the website once its APK is published.</p>
+              <AvailabilityLink href={shoppingApk} label="Shopping APK download" readyLabel="Download Shopping APK" />
+            </div>
+            <div className="space-y-3 rounded-2xl border border-[#8B35FF]/35 bg-[#150F2C] p-5">
+              <Apple className="h-7 w-7 text-[#B44CFF]" />
+              <h3 className="text-lg font-bold">3. Rewards — iPhone Web App</h3>
+              <p className="text-sm text-[#AAA2C1]">Open in Safari and choose Share → Add to Home Screen. No App Store needed.</p>
+              <AvailabilityLink href={rewardsWeb} label="Rewards iPhone Web App" readyLabel="Open Rewards iPhone Web App" />
+            </div>
+            <div className="space-y-3 rounded-2xl border border-[#287CFF]/35 bg-[#150F2C] p-5">
+              <Apple className="h-7 w-7 text-[#92B6FF]" />
+              <h3 className="text-lg font-bold">4. Shopping — iPhone Web App</h3>
+              <p className="text-sm text-[#AAA2C1]">Open in Safari and choose Share → Add to Home Screen. No App Store needed.</p>
+              <AvailabilityLink href={shoppingWeb} label="Shopping iPhone Web App" readyLabel="Open Shopping iPhone Web App" />
+            </div>
+          </div>
+        </section>
+
         <div className="grid gap-7 lg:grid-cols-2">
           <section id="rewards-preview" className="rounded-[28px] border border-[#8B35FF]/40 bg-[#110D24] p-5 sm:p-8">
             <div className="mb-5 space-y-2">
