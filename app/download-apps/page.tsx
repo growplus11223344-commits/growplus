@@ -80,36 +80,36 @@ export default function DownloadAppsPage() {
     },
     {
       id: "rewards-ios",
-      os: "iOS (Apple)",
+      os: "iOS / Safari PWA",
       type: "Wallet & Rewards",
-      title: "GrowPlus Rewards iOS App",
+      title: "GrowPlus Rewards Web App (PWA)",
       osIcon: Apple,
-      store: "Apple App Store",
-      version: "v1.0.0 Verified",
-      size: "iOS 15.0+",
+      store: "Safari PWA (iOS)",
+      version: "v1.0.0 Live PWA",
+      size: "Instant Access",
       badgeColor: "text-[#B44CFF] bg-[#B44CFF]/10 border-[#B44CFF]/30",
       description:
-        "High-performance native Apple iOS app for wallet tracking, binary genealogy view, and daily earnings.",
-      downloadUrl: "https://apps.apple.com",
-      fileName: "Apple App Store",
-      buttonText: "Install on iPhone / iPad",
+        "Access GrowPlus Rewards directly on your iPhone & iPad via Safari PWA. Tap Share → 'Add to Home Screen' for native full-screen app experience.",
+      downloadUrl: "https://growplus-rewards-pwa.onrender.com",
+      fileName: "GrowPlus Rewards PWA",
+      buttonText: "Open Rewards PWA (iOS)",
       isApk: false,
     },
     {
       id: "shopping-ios",
-      os: "iOS (Apple)",
+      os: "iOS / Safari PWA",
       type: "E-Mall Shopping",
-      title: "GrowPlus E-Mall iOS App",
+      title: "GrowPlus E-Mall Web App (PWA)",
       osIcon: Apple,
-      store: "Apple App Store",
-      version: "v1.0.0 Verified",
-      size: "iOS 15.0+",
+      store: "Safari PWA (iOS)",
+      version: "v1.0.0 Live PWA",
+      size: "Instant Access",
       badgeColor: "text-amber-300 bg-amber-400/10 border-amber-400/30",
       description:
-        "Premium shopping portal on iPhone & iPad with biometric checkout and direct shopping credit redemption.",
-      downloadUrl: "https://apps.apple.com",
-      fileName: "Apple App Store",
-      buttonText: "Install on iPhone / iPad",
+        "Open the GrowPlus Shopping portal directly on iPhone & iPad. Seamlessly browse products, redeem credits, and install to your Home Screen with Safari.",
+      downloadUrl: "https://growplus-shopping-pwa.onrender.com",
+      fileName: "GrowPlus Shopping PWA",
+      buttonText: "Open Shopping PWA (iOS)",
       isApk: false,
     },
   ];
@@ -207,12 +207,10 @@ export default function DownloadAppsPage() {
                       </a>
                     ) : (
                       <a
-                        href="/register"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setDownloadModal(app.title);
-                        }}
-                        className="w-full py-3 rounded-xl bg-[#287CFF] hover:bg-[#35E6A2] hover:text-black text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all hover:scale-102 cursor-pointer"
+                        href={app.downloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-3 rounded-xl bg-gradient-to-r from-[#8B35FF] to-[#287CFF] hover:opacity-90 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all hover:scale-102 cursor-pointer"
                       >
                         <Apple className="w-4 h-4" />
                         <span>{app.buttonText}</span>
