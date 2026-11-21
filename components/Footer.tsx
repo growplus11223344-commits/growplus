@@ -171,13 +171,13 @@ export const Footer: React.FC = () => {
               <li>
                 <Link href="/download-apps" className="hover:text-[#35E6A2] flex items-center gap-1.5">
                   <Smartphone className="w-3.5 h-3.5 text-[#35E6A2]" />
-                  <span>Android APK Direct (v2.4.1)</span>
+                  <span>Android Web Apps / APK when ready</span>
                 </Link>
               </li>
               <li>
                 <Link href="/download-apps" className="hover:text-[#38BDF8] flex items-center gap-1.5">
                   <span className="text-xs"></span>
-                  <span>Apple iOS App Store Beta</span>
+                  <span>iPhone Web Apps — no App Store</span>
                 </Link>
               </li>
               <li>
