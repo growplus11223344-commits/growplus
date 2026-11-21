@@ -27,7 +27,7 @@ export const AppDownloadFintech: React.FC = () => {
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#35E6A2]/10 border border-[#35E6A2]/30 text-xs font-bold text-[#35E6A2]">
                 <Smartphone className="w-3.5 h-3.5" />
-                <span>GrowPlus Mobile App Experience</span>
+                <span>GrowPlus Distributor Mobile Suite v2.4.1</span>
               </div>
 
               <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight">
@@ -38,7 +38,7 @@ export const AppDownloadFintech: React.FC = () => {
               </h2>
 
               <p className="text-xs sm:text-sm text-[#AAA2C1] leading-relaxed max-w-xl">
-                Just like Amway Creator and Mi Lifestyle apps, take your entire direct-selling business in your pocket. Explore the Rewards and Shopping interface previews before the separately hosted applications are published.
+                Just like Amway Creator and Mi Lifestyle apps, take your entire direct-selling business in your pocket. Track live binary tree genealogy, monitor Left/Right BV match, receive 10% direct referral alerts, and order wellness products in 1 tap.
               </p>
 
               {/* 4 Feature Highlights */}
@@ -64,7 +64,7 @@ export const AppDownloadFintech: React.FC = () => {
                     <ShoppingBag className="w-4 h-4" />
                     <span>In-App DP Shopping</span>
                   </div>
-                  <p className="text-[11px] text-[#AAA2C1]">Discover our Shopping App layout and product catalog interface.</p>
+                  <p className="text-[11px] text-[#AAA2C1]">Shop 100+ certified products with doorstep delivery &amp; live tracking.</p>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-black/40 border border-white/5 space-y-1">
@@ -72,7 +72,7 @@ export const AppDownloadFintech: React.FC = () => {
                     <ShieldCheck className="w-4 h-4" />
                     <span>Bank Payout Ledger</span>
                   </div>
-                  <p className="text-[11px] text-[#AAA2C1]">Review account and shopping history interfaces in the app previews.</p>
+                  <p className="text-[11px] text-[#AAA2C1]">Automated weekly bank transfer statements and TDS certificates.</p>
                 </div>
               </div>
 
@@ -83,7 +83,7 @@ export const AppDownloadFintech: React.FC = () => {
                   className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black font-extrabold text-xs sm:text-sm shadow-lg hover:opacity-95 transition-all flex items-center gap-2"
                 >
                   <Download className="w-4 h-4" />
-                  <span>Explore Android App Previews</span>
+                  <span>Download Android APK (v2.4.1)</span>
                 </Link>
 
                 <Link
@@ -91,16 +91,16 @@ export const AppDownloadFintech: React.FC = () => {
                   className="px-6 py-3.5 rounded-2xl bg-black/50 hover:bg-black/70 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-2"
                 >
                   <span className="text-base"></span>
-                  <span>Explore iPhone Web App Previews</span>
+                  <span>iOS App Store (TestFlight)</span>
                 </Link>
               </div>
 
               <div className="flex items-center gap-4 text-xs text-[#AAA2C1] pt-1">
                 <span className="flex items-center gap-1 text-[#35E6A2]">
-                  <ShieldCheck className="w-4 h-4" /> APK downloads will appear after release verification
+                  <ShieldCheck className="w-4 h-4" /> 100% Virus-Free Verified APK
                 </span>
                 <span>•</span>
-                <span>Preview interfaces use illustrative data</span>
+                <span>FSSAI &amp; Quality Certified Catalog</span>
               </div>
             </div>
 

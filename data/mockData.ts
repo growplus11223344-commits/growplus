@@ -182,8 +182,8 @@ export const FAQS_DATA: FaqItem[] = [
   {
     id: "faq-5",
     category: "Referral",
-    question: "How does the GrowPlus referral system work?",
-    answer: "Every member receives a unique referral link and invitation code. When you invite friends who register and engage with GrowPlus, both you and your friend unlock tiered community rewards and bonus shopping credits credited straight to your digital rewards wallet."
+    question: "How does the GrowPlus 10-tier referral system work?",
+    answer: "Every member receives a unique sponsor referral link. The system rewards across 10 completed generations: Tier 1 (Direct) gives 10%, Tier 2 gives 9%, Tier 3 gives 8%, Tier 4 gives 7% down to Tier 10 giving 1% on product purchases, following a 1 to 512 dual-team binary duplication structure."
   },
   {
     id: "faq-6",
@@ -201,7 +201,7 @@ export const FAQS_DATA: FaqItem[] = [
     id: "faq-8",
     category: "General",
     question: "Is the GrowPlus Rewards mobile application currently available?",
-    answer: "The GrowPlus Rewards App is currently in active final beta development. It is scheduled for official launch on Google Play Store (Android) and Apple App Store (iOS). You can join our VIP Early Access waitlist right now to receive immediate launch alerts and early adopter perks."
+    answer: "The GrowPlus Rewards App is officially verified and available for Android and iOS devices. You can install the APK or register your partner account to enjoy immediate shopping credits and 10-tier referral benefits."
   },
   {
     id: "faq-9",

@@ -52,18 +52,18 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      year: "Phase 1 (Current)",
-      title: "Ecosystem Conceptualization & Web Launch",
+      year: "Phase 1",
+      title: "Ecosystem Architecture & Official Web Portal",
       description:
-        "Unveiling the GROWPLUS digital architecture, brand identity, reward framework, and curated e-commerce catalog preview.",
+        "The GROWPLUS digital architecture, brand identity, partner reward framework, and curated e-commerce catalog.",
       status: "Active Stage",
     },
     {
-      year: "Phase 2 (Upcoming)",
-      title: "GrowPlus Rewards App Rollout",
+      year: "Phase 2",
+      title: "GrowPlus Mobile Platform Rollout",
       description:
-        "Public launch of GrowPlus Rewards App on Google Play and Apple App Store with integrated in-app shopping gateway and notification systems.",
-      status: "Beta Testing",
+        "Official deployment of GrowPlus Rewards App on Google Play and Apple App Store with integrated in-app shopping gateway and notification systems.",
+      status: "Official Release",
     },
     {
       year: "Phase 3",

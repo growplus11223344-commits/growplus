@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
       title: "1st Product Bill & ID Activation",
       tagline: "15%-25% Wholesale DP & 10% Sponsor Credit",
       description:
-        "Order certified AYUSH & FSSAI healthcare, wellness, or personal care products at wholesale Distributor Price (DP). Your direct sponsor receives an immediate 10% cash bonus on your first invoice.",
+        "Order certified healthcare, wellness, or personal care products at wholesale Distributor Price (DP). Your direct sponsor receives an immediate 10% cash bonus on your first invoice.",
       details: [
         "Explore 100% genuine herbal nutrition, skincare, and organic agriculture lines.",
         "Enjoy 15% to 25% direct savings compared to Maximum Retail Price (MRP).",

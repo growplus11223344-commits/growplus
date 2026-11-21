@@ -28,6 +28,7 @@ import { AppDownloadFintech } from "@/components/AppDownloadFintech";
 import { FAQFintech } from "@/components/FAQFintech";
 import { ContactFintechSection } from "@/components/ContactFintechSection";
 import { DemoVideoModal } from "@/components/DemoVideoModal";
+import { AutoAuthModal } from "@/components/AutoAuthModal";
 
 export default function HomePage() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
@@ -38,6 +39,9 @@ export default function HomePage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-b from-[#287CFF]/20 via-[#8B35FF]/15 to-transparent blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-[900px] -left-48 w-96 h-96 bg-[#35E6A2]/10 rounded-full blur-[130px] pointer-events-none -z-10" />
       <div className="absolute top-[1800px] -right-48 w-96 h-96 bg-[#287CFF]/15 rounded-full blur-[130px] pointer-events-none -z-10" />
+
+      {/* Timed 7-Second Auto-Popup Sign-In Modal */}
+      <AutoAuthModal />
 
       {/* Demo Video Walkthrough Modal */}
       <DemoVideoModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
@@ -91,11 +95,11 @@ export default function HomePage() {
                 </a>
 
                 <a
-                  href="/download-apps"
+                  href="#download"
                   className="px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <Smartphone className="w-4 h-4 text-[#38BDF8]" />
-                  <span>Open Rewards &amp; Shopping</span>
+                  <span>Download App to Shop</span>
                 </a>
               </div>
 
@@ -156,18 +160,18 @@ export default function HomePage() {
                   </p>
 
                   <a
-                    href="/download-apps"
+                    href="#download"
                     className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    <span>Open Mobile Apps</span>
+                    <span>Download App to Shop &amp; Order</span>
                   </a>
                 </div>
 
                 {/* Direct Android & iOS App Download */}
                 <div className="space-y-2 pt-1">
                   <span className="text-[10px] uppercase font-bold text-[#AAA2C1] tracking-wider block">
-                    Choose Your Mobile App
+                    Direct Mobile App Download
                   </span>
 
                   <div className="grid grid-cols-2 gap-2">
@@ -178,9 +182,9 @@ export default function HomePage() {
                       <span className="text-[9px] uppercase tracking-wider text-[#AAA2C1]">Android</span>
                       <span className="text-xs font-bold text-white group-hover:text-[#35E6A2] transition-colors flex items-center gap-1 mt-0.5">
                         <Download className="w-3 h-3 text-[#35E6A2]" />
-                        Android Web App
+                        APK Direct
                       </span>
-                      <span className="text-[8px] text-[#35E6A2] font-semibold mt-1">APK release pending</span>
+                      <span className="text-[8px] text-[#35E6A2] font-semibold mt-1">v2.4.1 Verified</span>
                     </Link>
 
                     <Link
@@ -190,9 +194,9 @@ export default function HomePage() {
                       <span className="text-[9px] uppercase tracking-wider text-[#AAA2C1]">Apple iOS</span>
                       <span className="text-xs font-bold text-white group-hover:text-[#38BDF8] transition-colors flex items-center gap-1 mt-0.5">
                         <span className="text-xs"></span>
-                        iPhone Web App
+                        App Store
                       </span>
-                      <span className="text-[8px] text-[#38BDF8] font-semibold mt-1">Safari Home Screen</span>
+                      <span className="text-[8px] text-[#38BDF8] font-semibold mt-1">Official Release</span>
                     </Link>
                   </div>
                 </div>
