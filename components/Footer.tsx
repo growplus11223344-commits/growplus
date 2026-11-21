@@ -44,8 +44,8 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 flex flex-col gap-5 text-left">
             <Logo size="lg" showTagline={true} />
             <p className="text-[#AAA2C1] text-xs sm:text-sm leading-relaxed max-w-sm">
-              GROWPLUS is India&apos;s direct selling wellness and binary networking platform. 
-              Delivering certified AYUSH and FSSAI health formulations, an ethical 1:1 binary compensation plan, flat 10% first-bill direct referral rewards, and a dedicated mobile distributor app.
+              GROWPLUS is India&apos;s digital partner ecosystem and binary rewards platform. 
+              Delivering verified lifestyle and wellness products, an ethical 1:1 binary compensation plan, instant 10% first-deposit rewards, and integrated e-mall shopping credits.
             </p>
 
             {/* Newsletter */}
@@ -177,17 +177,17 @@ export const Footer: React.FC = () => {
               <li>
                 <Link href="/download-apps" className="hover:text-[#38BDF8] flex items-center gap-1.5">
                   <span className="text-xs"></span>
-                  <span>Apple iOS App Store Beta</span>
+                  <span>Apple iOS App Store Official</span>
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="hover:text-white">
-                  Distributor Web Portal
+                <Link href="/policy" className="hover:text-white">
+                  Partner Policy &amp; Terms
                 </Link>
               </li>
               <li>
                 <Link href="/register" className="hover:text-[#35E6A2] font-bold">
-                  Free KYC Registration &rarr;
+                  Free Member Registration &rarr;
                 </Link>
               </li>
             </ul>
@@ -204,8 +204,8 @@ export const Footer: React.FC = () => {
                 <span>Direct Selling Guidelines 2021</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
-                <Award className="w-4 h-4 text-amber-400" />
-                <span>AYUSH Premium &amp; FSSAI Licensed</span>
+                <Award className="w-4 h-4 text-emerald-400" />
+                <span>FSSAI Certified Quality Standards</span>
               </div>
               <p className="text-[#AAA2C1] text-xs leading-relaxed">
                 Nodal Grievance Redressal officer available Mon–Sat, 9:30 AM – 6:30 PM IST.
@@ -223,15 +223,15 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Regulatory & Direct Selling Guidelines Notice */}
+        {/* Regulatory & Deposit / Partner Policy Statement */}
         <div className="mb-10 p-5 rounded-2xl bg-[#0E1533]/90 border border-[#35E6A2]/30 text-xs leading-relaxed text-[#AAA2C1] flex flex-col sm:flex-row gap-4 items-start text-left">
           <ShieldCheck className="w-5 h-5 text-[#35E6A2] shrink-0 mt-0.5" />
           <div className="space-y-1.5">
             <p className="font-semibold text-white">
-              Direct Selling Regulatory Compliance &amp; Consumer Protection Statement:
+              Official Partner Deposit, Shopping &amp; No-Refund Policy:
             </p>
             <p>
-              GROWPLUS operates in strict conformity with the Consumer Protection (Direct Selling) Rules, 2021 issued by the Ministry of Consumer Affairs, Food &amp; Public Distribution, Government of India. There is zero joining fee and zero mandatory kit purchase requirement to become a distributor. All products are available to order via our official mobile app at wholesale Distributor Prices (DP).
+              Members can start by making an initial deposit of ₹500 to ₹5,000 to activate their partner account, receiving an <strong className="text-white">instant 10% cash bonus</strong> directly on their first deposit. Deposited funds and generated bonuses are credited to your active portal dashboard for earning daily/referral commissions and purchasing curated products in our official shopping mall. GROWPLUS operates under a strict <strong className="text-amber-300">No Return &amp; No Refund Policy</strong>. Deposited funds are non-refundable and cannot be fully withdrawn as raw capital; they are permanently utilized as working credits for dashboard earning, commission-based partnerships, and e-mall shopping redemptions.
             </p>
           </div>
         </div>
@@ -239,20 +239,20 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Copyright & Policy Links */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div>
-            © 2026 GROWPLUS Global Wellness Marketing Pvt. Ltd. All rights reserved.
+            © 2026 GROWPLUS Global Ecosystem Pvt. Ltd. All rights reserved.
           </div>
           <div className="flex flex-wrap items-center gap-6 text-[#AAA2C1]">
-            <Link href="/faqs" className="hover:text-white transition-colors">
+            <Link href="/policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/faqs" className="hover:text-white transition-colors">
-              Direct Selling Code of Conduct
+            <Link href="/policy" className="hover:text-white transition-colors">
+              Deposit &amp; Partner Policy (No Refund)
             </Link>
             <Link href="/contact" className="hover:text-white transition-colors">
               Grievance Redressal
             </Link>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Return &amp; Refund Policy (30 Days)
+            <Link href="/policy" className="text-amber-300 hover:text-amber-200 transition-colors font-semibold">
+              No Refund &amp; E-Mall Terms
             </Link>
           </div>
         </div>

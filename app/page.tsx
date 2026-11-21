@@ -28,6 +28,7 @@ import { AppDownloadFintech } from "@/components/AppDownloadFintech";
 import { FAQFintech } from "@/components/FAQFintech";
 import { ContactFintechSection } from "@/components/ContactFintechSection";
 import { DemoVideoModal } from "@/components/DemoVideoModal";
+import { AutoAuthModal } from "@/components/AutoAuthModal";
 
 export default function HomePage() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
@@ -38,6 +39,9 @@ export default function HomePage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-b from-[#287CFF]/20 via-[#8B35FF]/15 to-transparent blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-[900px] -left-48 w-96 h-96 bg-[#35E6A2]/10 rounded-full blur-[130px] pointer-events-none -z-10" />
       <div className="absolute top-[1800px] -right-48 w-96 h-96 bg-[#287CFF]/15 rounded-full blur-[130px] pointer-events-none -z-10" />
+
+      {/* Timed 7-Second Auto-Popup Sign-In Modal */}
+      <AutoAuthModal />
 
       {/* Demo Video Walkthrough Modal */}
       <DemoVideoModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
@@ -192,7 +196,7 @@ export default function HomePage() {
                         <span className="text-xs"></span>
                         App Store
                       </span>
-                      <span className="text-[8px] text-[#38BDF8] font-semibold mt-1">Beta Access</span>
+                      <span className="text-[8px] text-[#38BDF8] font-semibold mt-1">Official Release</span>
                     </Link>
                   </div>
                 </div>

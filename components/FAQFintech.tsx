@@ -10,11 +10,11 @@ export const FAQFintech: React.FC = () => {
   const faqs = [
     {
       q: "What is GROWPLUS and how does it compare to Amway, Vestige, and Mi Lifestyle?",
-      a: "GROWPLUS is a 100% legal, product-based direct selling company operating under the Consumer Protection (Direct Selling) Rules 2021. Just like Amway (Nutrilite), Vestige, and Mi Lifestyle (Elements Wellness), we market premium certified AYUSH & FSSAI healthcare, nutraceutical, skincare, and organic agriculture products through independent distributors.",
+      a: "GROWPLUS is a 100% legal, product-based direct selling company operating under the Consumer Protection (Direct Selling) Rules 2021. Just like Amway (Nutrilite), Vestige, and Mi Lifestyle (Elements Wellness), we market premium certified FSSAI healthcare, nutraceutical, skincare, and organic agriculture products through independent distributors.",
     },
     {
-      q: "How does the '10% on First Bill (One-Time Only)' Referral Bonus work?",
-      a: "Whenever you sponsor a new distributor who registers with your sponsor ID, you receive an instant 10% direct cash bonus on their very first purchase/bill. For example, if your friend places their first starter order of ₹10,000, ₹1,000 is credited directly to your bank payout wallet. Subsequent re-orders do not pay direct 10%; instead, their full Business Volume (BV) flows into your Binary Team matching tree for lifelong matching bonuses.",
+      q: "How does the 10-Tier Multi-Level Referral (10% to 1%) structure work?",
+      a: "Our referral program rewards distributors across 10 completed generations: Tier 1 (Direct Sponsor) earns 10%, Tier 2 earns 9%, Tier 3 earns 8%, Tier 4 earns 7%, Tier 5 earns 6%, Tier 6 earns 5%, Tier 7 earns 4%, Tier 8 earns 3%, Tier 9 earns 2%, and Tier 10 earns 1% on product order invoices. In addition to referral commissions, product BV from your Left and Right teams enters your 1:1 Binary tree for weekly 12% matching bonuses.",
     },
     {
       q: "How does the Binary Network Tree (Left & Right Teams) matching plan work?",

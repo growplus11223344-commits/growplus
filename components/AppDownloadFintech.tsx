@@ -100,7 +100,7 @@ export const AppDownloadFintech: React.FC = () => {
                   <ShieldCheck className="w-4 h-4" /> 100% Virus-Free Verified APK
                 </span>
                 <span>•</span>
-                <span>FSSAI &amp; AYUSH Catalog Integrated</span>
+                <span>FSSAI &amp; Quality Certified Catalog</span>
               </div>
             </div>
 

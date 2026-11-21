@@ -25,11 +25,11 @@ export const HowItWorksFintech: React.FC = () => {
     },
     {
       step: "02",
-      title: "Activate with 1st Product Bill",
-      subtitle: "Wholesale DP Pricing",
-      desc: "Select certified Ayurvedic, nutrition, or home care products at 15-25% wholesale discount. Your direct sponsor receives an instant 10% first-bill bonus.",
+      title: "Deposit ₹500 - ₹5,000 & Activate",
+      subtitle: "Instant 10% First Deposit Bonus",
+      desc: "Deposit ₹500 to ₹5,000 to activate your partner ID. You receive an instant 10% cash bonus on the spot. Balances power dashboard earning & GrowPlus Mall shopping.",
       icon: ShoppingBag,
-      highlight: "10% First Bill Bonus",
+      highlight: "Instant 10% Bonus",
     },
     {
       step: "03",

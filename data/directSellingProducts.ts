@@ -130,7 +130,7 @@ export const DIRECT_SELLING_PRODUCTS: DirectSellingProduct[] = [
   // AYURVEDIC CARE (Elements Wellness / Ayusante Inspired)
   {
     id: "gp-ayur-01",
-    name: "Elements Shakti Ayush Premium 9-Berry Elixir",
+    name: "Elements Shakti Pure 9-Berry Elixir",
     hindiName: "एलिमेंट्स शक्ति 9-बेरी प्रीमियम इम्यूनिटी टॉनिक",
     category: "Ayurvedic Care",
     mrp: 1799,
@@ -140,18 +140,18 @@ export const DIRECT_SELLING_PRODUCTS: DirectSellingProduct[] = [
     rating: 5.0,
     reviewsCount: 2340,
     image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700&auto=format&fit=crop&q=80",
-    badge: "AYUSH Premium Mark",
+    badge: "FSSAI Grade Quality",
     size: "1000 ml Concentrated Botanical",
     description: "Inspired by legendary direct-selling wellness tonics like Mi Lifestyle's 9e5 and Elements Wellness. Features Acai berry, Goji berry, Wild Amla, Giloy, Ashwagandha, and Noni for extraordinary ORAC 1,00,000+ antioxidant protection.",
     benefits: [
       "Ultra-High ORAC Score > 1,00,000 for cellular detox",
       "Combats Oxidative Stress & Free Radical Aging",
-      "AYUSH Premium Mark Certified Formulations",
+      "GMP Certified Natural Formulations",
       "Enhances natural resistance against seasonal ailments"
     ],
     ingredients: ["Wild Himalayan Amla", "Acai Berry", "Giloy (Tinospora Cordifolia)", "Ashwagandha", "Noni", "Sea Buckthorn"],
     usage: "Dilute 30ml in a glass of water every morning on an empty stomach.",
-    certification: "Ministry of AYUSH Premium Mark Certified",
+    certification: "FSSAI & GMP Certified Quality Formulation",
     inStock: true,
   },
   {
@@ -177,7 +177,7 @@ export const DIRECT_SELLING_PRODUCTS: DirectSellingProduct[] = [
     ],
     ingredients: ["Gymnema Sylvestre (Gurmar 75%)", "Vijaysar Bark", "Karela Extract", "Jamun Seed", "Fenugreek (Methi)"],
     usage: "Take 1 capsule twice daily, 30 minutes before meals.",
-    certification: "GMP & Ayush Standard Certified",
+    certification: "GMP & ISO Standard Certified",
     inStock: true,
   },
   {
@@ -203,7 +203,7 @@ export const DIRECT_SELLING_PRODUCTS: DirectSellingProduct[] = [
     ],
     ingredients: ["Mahanarayan Taila", "Shallaki (Boswellia)", "Gandhapura Oil", "Camphor (Karpura)", "Til Taila Base"],
     usage: "Gently massage 5-10 ml on affected joints twice daily.",
-    certification: "Ayush Certified Classical Ayurvedic Product",
+    certification: "GMP Certified Classical Formulation",
     inStock: true,
   },
 
@@ -257,7 +257,7 @@ export const DIRECT_SELLING_PRODUCTS: DirectSellingProduct[] = [
     ],
     ingredients: ["Cold-pressed Sesame Oil", "Red Onion Extract", "Bhringraj", "Kalonji Oil", "Amla", "Rosemary Oil"],
     usage: "Apply directly to scalp with root comb, massage gently for 10 mins.",
-    certification: "Ayush Approved • Sulphate & Mineral Oil Free",
+    certification: "GMP Approved • Sulphate & Mineral Oil Free",
     inStock: true,
   },
   {
