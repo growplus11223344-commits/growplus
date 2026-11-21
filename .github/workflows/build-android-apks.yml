@@ -1,0 +1,144 @@
+name: Build and publish signed GrowPlus Android APKs
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_release:
+        description: "Publish verified signed APKs to the public android-latest GitHub Release?"
+        type: boolean
+        required: true
+        default: false
+
+jobs:
+  signed-android-apk:
+    name: Signed APK ${{ matrix.app }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - app: growplus_rewards
+            artifact: growplus-rewards-android-release
+            keystore_secret: REWARDS_KEYSTORE_BASE64
+            alias_secret: REWARDS_KEY_ALIAS
+            password_secret: REWARDS_KEY_PASSWORD
+            store_password_secret: REWARDS_STORE_PASSWORD
+          - app: growplus_shopping
+            artifact: growplus-shopping-android-release
+            keystore_secret: SHOPPING_KEYSTORE_BASE64
+            alias_secret: SHOPPING_KEY_ALIAS
+            password_secret: SHOPPING_KEY_PASSWORD
+            store_password_secret: SHOPPING_STORE_PASSWORD
+    defaults:
+      run:
+        working-directory: apps/${{ matrix.app }}
+        shell: bash
+    steps:
+      - name: Check out development branch containing the Flutter apps
+        uses: actions/checkout@v4
+        with:
+          ref: development
+
+      - name: Configure Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Configure Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Validate production API and release signing
+        env:
+          API_BASE_URL: ${{ secrets.GROWPLUS_PRODUCTION_API_BASE_URL }}
+          SIGNING_KEYSTORE: ${{ secrets[matrix.keystore_secret] }}
+          SIGNING_ALIAS: ${{ secrets[matrix.alias_secret] }}
+          SIGNING_KEY_PASSWORD: ${{ secrets[matrix.password_secret] }}
+          SIGNING_STORE_PASSWORD: ${{ secrets[matrix.store_password_secret] }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$API_BASE_URL" || "$API_BASE_URL" != https://* || "$API_BASE_URL" == *"growplus-a1ni.onrender.com"* ]]; then
+            echo "::error::GROWPLUS_PRODUCTION_API_BASE_URL must point to the verified production backend API, NOT the marketing website."
+            exit 1
+          fi
+          for setting in "$SIGNING_KEYSTORE" "$SIGNING_ALIAS" "$SIGNING_KEY_PASSWORD" "$SIGNING_STORE_PASSWORD"; do
+            if [[ -z "$setting" ]]; then
+              echo "::error::Missing Android signing secret. Provide secure release keystore and passwords."
+              exit 1
+            fi
+          done
+          echo "$SIGNING_KEYSTORE" | base64 --decode > android/app/upload-keystore.jks
+          {
+            printf 'storeFile=upload-keystore.jks\n'
+            printf 'keyAlias=%s\n' "$SIGNING_ALIAS"
+            printf 'keyPassword=%s\n' "$SIGNING_KEY_PASSWORD"
+            printf 'storePassword=%s\n' "$SIGNING_STORE_PASSWORD"
+          } > android/key.properties
+          chmod 600 android/key.properties android/app/upload-keystore.jks
+
+      - name: Get Flutter packages
+        run: flutter pub get
+
+      - name: Build signed Android APK
+        env:
+          API_BASE_URL: ${{ secrets.GROWPLUS_PRODUCTION_API_BASE_URL }}
+        run: flutter build apk --release --dart-define=API_BASE_URL="$API_BASE_URL"
+
+      - name: Verify APK
+        run: |
+          set -euo pipefail
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          test -s "$APK"
+          TOOLS="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -1)"
+          "$TOOLS/apksigner" verify --verbose "$APK"
+          sha256sum "$APK"
+
+      - name: Upload signed APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: apps/${{ matrix.app }}/build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 14
+          if-no-files-found: error
+
+  publish-release:
+    name: Publish Android APK download links
+    if: ${{ inputs.publish_release }}
+    needs: signed-android-apk
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: growplus-android-release
+      cancel-in-progress: false
+    steps:
+      - name: Checkout default branch for GitHub CLI
+        uses: actions/checkout@v4
+
+      - name: Download both signed APK artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: growplus-*-android-release
+          path: signed-apks
+
+      - name: Verify and publish stable public release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p releases
+          cp signed-apks/growplus-rewards-android-release/app-release.apk releases/growplus-rewards.apk
+          cp signed-apks/growplus-shopping-android-release/app-release.apk releases/growplus-shopping.apk
+          test -s releases/growplus-rewards.apk
+          test -s releases/growplus-shopping.apk
+          sha256sum releases/*.apk > releases/SHA256SUMS.txt
+          if ! gh release view android-latest --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create android-latest --repo "$GITHUB_REPOSITORY" --target development --title "GrowPlus Android Apps" --notes "Android builds signed with the owner's release signing keys. Verify installation and server connectivity before public distribution."
+          fi
+          gh release upload android-latest releases/growplus-rewards.apk releases/growplus-shopping.apk releases/SHA256SUMS.txt --clobber --repo "$GITHUB_REPOSITORY"
+          echo "Published both public APK assets. Website download URLs can now be configured after installation checks."
