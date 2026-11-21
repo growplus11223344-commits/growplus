@@ -48,11 +48,17 @@ android {
 
     buildTypes {
         release {
-            signingConfig = if (keystorePropertiesFile.exists()) {
-                signingConfigs.getByName("release")
-            } else {
-                signingConfigs.getByName("debug")
+            // Public releases must never silently fall back to debug signing.
+            require(keystorePropertiesFile.exists()) {
+                "Missing Android release signing configuration: android/key.properties"
             }
+            require(
+                listOf("keyAlias", "keyPassword", "storeFile", "storePassword")
+                    .all { !keystoreProperties.getProperty(it).isNullOrBlank() }
+            ) {
+                "Incomplete Android release signing configuration"
+            }
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             isShrinkResources = false
         }
