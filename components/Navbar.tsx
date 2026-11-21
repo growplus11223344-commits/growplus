@@ -37,18 +37,18 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Banner Notice - Direct Selling Compliance & Standards */}
+      {/* Top Banner Notice - Deposit & Partner Policy */}
       <div className="bg-gradient-to-r from-[#0A0E24] via-[#141E45] to-[#0A0E24] border-b border-[#287CFF]/20 text-xs py-1.5 px-4 text-center text-[#AAA2C1]">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4">
           <span className="inline-flex items-center gap-1 text-[#35E6A2] font-semibold">
-            <CheckCircle2 className="w-3.5 h-3.5" /> Direct Selling Compliant:
+            <CheckCircle2 className="w-3.5 h-3.5" /> Partner Ecosystem:
           </span>
-          <span>100% Certified Ayurvedic &amp; Wellness Products • AYUSH &amp; FSSAI Standards</span>
+          <span>Deposit ₹500 - ₹5,000 • Instant 10% First Deposit Bonus • E-Mall Shopping &amp; 10-Tier Commission</span>
           <Link
             href="/register"
             className="text-white underline hover:text-[#38BDF8] transition-colors ml-1 font-bold inline-flex items-center gap-1"
           >
-            <span>Become a Distributor</span> &rarr;
+            <span>Join Now</span> &rarr;
           </Link>
         </div>
       </div>
@@ -91,17 +91,11 @@ export const Navbar: React.FC = () => {
               })}
             </nav>
 
-            {/* Right: Action Buttons (Distributor Login / Join Now) */}
+            {/* Right: Action Buttons (Join Free) */}
             <div className="hidden sm:flex items-center gap-3">
               <Link
-                href="/login"
-                className="px-4 py-2 rounded-xl text-xs font-semibold text-white/90 hover:text-white border border-white/15 hover:border-[#287CFF]/60 hover:bg-[#287CFF]/10 transition-all duration-200"
-              >
-                Distributor Login
-              </Link>
-              <Link
                 href="/register"
-                className="relative group px-4 py-2 rounded-xl text-xs font-bold text-black overflow-hidden shadow-[0_0_20px_rgba(53,230,162,0.3)] hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transition-all duration-200"
+                className="relative group px-5 py-2.5 rounded-xl text-xs font-bold text-black overflow-hidden shadow-[0_0_20px_rgba(53,230,162,0.3)] hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transition-all duration-200"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-[#287CFF] to-[#35E6A2] group-hover:opacity-90 transition-opacity" />
                 <span className="relative flex items-center gap-1.5">
@@ -113,10 +107,10 @@ export const Navbar: React.FC = () => {
             {/* Mobile Hamburger Button */}
             <div className="flex lg:hidden items-center gap-2">
               <Link
-                href="/login"
-                className="px-3 py-1.5 rounded-lg text-xs font-semibold text-white/90 border border-white/10"
+                href="/register"
+                className="px-3 py-1.5 rounded-lg text-xs font-bold text-black bg-gradient-to-r from-[#287CFF] to-[#35E6A2]"
               >
-                Login
+                Join
               </Link>
               <button
                 type="button"
@@ -186,18 +180,18 @@ export const Navbar: React.FC = () => {
             {/* Bottom Actions */}
             <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
               <Link
-                href="/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-2.5 rounded-xl text-center text-sm font-semibold text-white border border-white/20 hover:bg-white/5"
-              >
-                Distributor Login
-              </Link>
-              <Link
                 href="/register"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-2.5 rounded-xl text-center text-sm font-bold text-black bg-gradient-to-r from-[#287CFF] to-[#35E6A2] shadow-lg"
+                className="w-full py-3 rounded-xl text-center text-sm font-bold text-black bg-gradient-to-r from-[#287CFF] to-[#35E6A2] shadow-lg"
               >
-                Join as Distributor (Free)
+                Join Free / Activate Partner
+              </Link>
+              <Link
+                href="/policy"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-2.5 rounded-xl text-center text-xs font-semibold text-white/80 border border-white/10 hover:bg-white/5"
+              >
+                Partner Deposit &amp; No-Refund Policy
               </Link>
               <div className="flex items-center justify-center gap-2 text-[10px] text-[#AAA2C1]/70 pt-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#35E6A2]" />

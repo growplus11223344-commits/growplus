@@ -1,0 +1,23 @@
+[Unit]
+Description=GrowPlus Backend API Service
+After=network.target mongod.service docker.service
+
+[Service]
+Type=simple
+User=growplus
+WorkingDirectory=/opt/growplus/backend
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+RestartSec=10
+EnvironmentFile=/opt/growplus/backend/.env
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=growplus-backend
+
+# Security Sandboxing for Linux / Fedora
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
