@@ -91,11 +91,11 @@ export default function HomePage() {
                 </a>
 
                 <a
-                  href="#download"
+                  href="/download-apps"
                   className="px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <Smartphone className="w-4 h-4 text-[#38BDF8]" />
-                  <span>Download App to Shop</span>
+                  <span>Open Rewards &amp; Shopping</span>
                 </a>
               </div>
 
@@ -156,18 +156,18 @@ export default function HomePage() {
                   </p>
 
                   <a
-                    href="#download"
+                    href="/download-apps"
                     className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#287CFF] to-[#35E6A2] text-black font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    <span>Download App to Shop &amp; Order</span>
+                    <span>Open Mobile Apps</span>
                   </a>
                 </div>
 
                 {/* Direct Android & iOS App Download */}
                 <div className="space-y-2 pt-1">
                   <span className="text-[10px] uppercase font-bold text-[#AAA2C1] tracking-wider block">
-                    Direct Mobile App Download
+                    Choose Your Mobile App
                   </span>
 
                   <div className="grid grid-cols-2 gap-2">
@@ -178,9 +178,9 @@ export default function HomePage() {
                       <span className="text-[9px] uppercase tracking-wider text-[#AAA2C1]">Android</span>
                       <span className="text-xs font-bold text-white group-hover:text-[#35E6A2] transition-colors flex items-center gap-1 mt-0.5">
                         <Download className="w-3 h-3 text-[#35E6A2]" />
-                        APK Direct
+                        Android Web App
                       </span>
-                      <span className="text-[8px] text-[#35E6A2] font-semibold mt-1">v2.4.1 Verified</span>
+                      <span className="text-[8px] text-[#35E6A2] font-semibold mt-1">APK release pending</span>
                     </Link>
 
                     <Link
@@ -190,9 +190,9 @@ export default function HomePage() {
                       <span className="text-[9px] uppercase tracking-wider text-[#AAA2C1]">Apple iOS</span>
                       <span className="text-xs font-bold text-white group-hover:text-[#38BDF8] transition-colors flex items-center gap-1 mt-0.5">
                         <span className="text-xs"></span>
-                        App Store
+                        iPhone Web App
                       </span>
-                      <span className="text-[8px] text-[#38BDF8] font-semibold mt-1">Beta Access</span>
+                      <span className="text-[8px] text-[#38BDF8] font-semibold mt-1">Safari Home Screen</span>
                     </Link>
                   </div>
                 </div>
